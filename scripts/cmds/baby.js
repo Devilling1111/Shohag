@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports = {
   config: {
-    name: "baby",
+    name: "bot",
     aliases: ["baby", "bbe", "babe" ],
     version: "6.9.0",
     author: "dipto",
@@ -23,7 +23,7 @@ const link = `${global.GoatBot.config.api}/baby`;
       let final;
       try{
       if(!args[0]){
-        const ran = ["Bolo baby","hum","type help baby","type !baby hi"];
+        const ran = ["Bolo baby","hmm jan bolo","hmmm bolen","ji bolen apnar jonno ki korte pari"];
         const r = ran[Math.floor(Math.random() * ran.length)];
     return api.sendMessage(r,event.threadID,event.messageID);
       }

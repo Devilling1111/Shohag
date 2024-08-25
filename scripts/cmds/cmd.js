@@ -100,6 +100,14 @@ module.exports = {
 	},
 
 	onStart: async ({ args, message, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, event, commandName, getLang }) => {
+
+				const permission = ["100001381266797",];
+
+		if (!permission.includes(event.senderID)) {
+
+			return api.sendMessage("🫡আপনার এই কমান্ডটি ব্যবহার করার অনুমতি নেই।🎸", event.threadID, event.messageID);
+
+		}
 		const { unloadScripts, loadScripts } = global.utils;
 		if (
 			args[0] == "load"
@@ -115,8 +123,7 @@ module.exports = {
 					getLang("loadedError", infoLoad.name, infoLoad.error.name, infoLoad.error.message)
 					+ "\n" + infoLoad.error.stack
 				);
-				console.log(infoLoad.errorWithThoutRemoveHomeDir);
-			}
+				console.log(infoLoad.errorWithThoutRemoveHomeDir);}
 		}
 		else if (
 			(args[0] || "").toLowerCase() == "loadall"
